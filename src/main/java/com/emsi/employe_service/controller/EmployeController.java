@@ -23,7 +23,7 @@ public class EmployeController {
         return ResponseEntity.status(201).body(saved);
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<EmployeResponse>> getAllEmployes(){
         List<EmployeResponse> toReturn = employeService.getAllEmployes();
         return ResponseEntity.ok().body(toReturn);
@@ -47,8 +47,8 @@ public class EmployeController {
         return ResponseEntity.ok().body(updated);
     }
 
-    @PatchMapping("/solde/{id}/{days}")
-    public void decrementSoldeConges(@PathVariable Long id, @PathVariable int days) {
+    @PostMapping("/solde/{id}/{days}")
+    public void decrementSoldeConges(@PathVariable(name = "id") Long id, @PathVariable(name = "days") int days) {
         employeService.decrementSoldeConges(id, days);
     }
 
