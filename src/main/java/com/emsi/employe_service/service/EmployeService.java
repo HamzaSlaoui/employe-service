@@ -70,4 +70,11 @@ public class EmployeService {
         return EmployeMapper.toResponse(updated);
     }
 
+    public void decrementSoldeConges(Long id, int days) {
+        Employe employe = employeRepository.findById(id)
+                .orElseThrow(() -> new EmployeNotFoundException("Aucun employé trouvé avec l'id : " + id));
+
+        employe.setSoldeConge(employe.getSoldeConge() - days);
+        employeRepository.save(employe);
+    }
 }

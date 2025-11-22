@@ -46,4 +46,10 @@ public class EmployeController {
         EmployeResponse updated = employeService.updateEmploye(id,  toUpdate);
         return ResponseEntity.ok().body(updated);
     }
+
+    @PatchMapping("/solde/{id}/{days}")
+    public void decrementSoldeConges(@PathVariable Long id, @PathVariable int days) {
+        employeService.decrementSoldeConges(id, days);
+    }
+
 }
