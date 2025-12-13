@@ -2,7 +2,6 @@ package com.emsi.employe_service.controller;
 
 import com.emsi.employe_service.dto.EmployeRequest;
 import com.emsi.employe_service.dto.EmployeResponse;
-import com.emsi.employe_service.exception.EmployeNotFoundException;
 import com.emsi.employe_service.service.EmployeService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
